@@ -1,0 +1,40 @@
+<apex:page controller="SubscriptionDashboardController">
+    <apex:slds />
+    <div class="slds-scope">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <apex:form >
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="customer-id">Customer ID</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText id="customer-id" value="{!customerId}" styleClass="slds-input"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="plan-id">Plan ID</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText id="plan-id" value="{!planId}" styleClass="slds-input"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="start-date">Start Date</label>
+                        <div class="slds-form-element__control">
+                            <apex:inputText id="start-date" value="{!startDate}" styleClass="slds-input"/>
+                        </div>
+                    </div>
+                    <apex:commandButton value="Create Subscription" action="{!createSubscription}" styleClass="slds-button slds-button_brand"/>
+                </apex:form>
+            </div>
+            <div class="slds-col">
+                <apex:pageBlock title="Active Subscriptions">
+                    <apex:pageBlockTable value="{!activeSubscriptions}" var="sub">
+                        <apex:column value="{!sub.Name}"/>
+                        <apex:column value="{!sub.Customer__r.Name}"/>
+                        <apex:column value="{!sub.Plan__r.Name}"/>
+                        <apex:column value="{!sub.Start_Date__c}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+            </div>
+        </div>
+    </div>
+</apex:page>
