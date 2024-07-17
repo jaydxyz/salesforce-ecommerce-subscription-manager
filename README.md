@@ -29,7 +29,7 @@ The Salesforce Subscription Manager is an open-source project that demonstrates 
 ## Setup Instructions
 1. Clone this repository to your local machine:
    ```
-   git clone https://github.com/yourusername/salesforce-subscription-manager.git
+   git clone https://github.com/jaydxyz/salesforce-subscription-manager.git
    ```
 
 2. Navigate to the project directory:
